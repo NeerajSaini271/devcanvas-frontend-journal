@@ -2,12 +2,6 @@
   <img src="public/devcanvas-logo.svg" alt="DevCanvas logo" width="640" />
 </p>
 
-<h1 align="center">DevCanvas</h1>
-
-<p align="center">
-  <strong>Learn. Build. Explain.</strong>
-</p>
-
 <p align="center">
   A responsive frontend engineering journal built with Next.js, featuring practical articles, topic-based discovery, custom visual headers, dark mode, and a demo moderation dashboard.
 </p>
