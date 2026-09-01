@@ -15,18 +15,7 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [signedIn, setSignedIn] = useState(null);
   const headerRef = useRef(null);
-
-  useEffect(() => {
-    const sync = () =>
-      setSignedIn(
-        sessionStorage.getItem("devcanvas-demo-session") === "active",
-      );
-    sync();
-    window.addEventListener("devcanvas-session-change", sync);
-    return () => window.removeEventListener("devcanvas-session-change", sync);
-  }, [pathname]);
 
   useEffect(() => {
     setOpen(false);
@@ -59,9 +48,6 @@ export default function Navbar() {
     };
   }, [open]);
 
-  const accountHref = signedIn ? "/logout" : "/login";
-  const accountLabel = signedIn ? "Sign Out" : "Admin Sign In";
-
   const isActive = (href) =>
     href === "/"
       ? pathname === "/" || pathname.startsWith("/articles/")
@@ -88,16 +74,16 @@ export default function Navbar() {
         <div className="header-actions">
           <ThemeToggle />
           <Link
-            className={
-              signedIn === null
-                ? "account-button desktop-login session-label-pending"
-                : "account-button desktop-login"
-            }
-            href={accountHref}
-            aria-hidden={signedIn === null ? "true" : undefined}
-            tabIndex={signedIn === null ? -1 : undefined}
+            className="account-button desktop-login session-link session-link-signed-out"
+            href="/login"
           >
-            {signedIn === null ? "Admin Sign In" : accountLabel}
+            Admin Sign In
+          </Link>
+          <Link
+            className="account-button desktop-login session-link session-link-signed-in"
+            href="/logout"
+          >
+            Sign Out
           </Link>
           <button
             className={open ? "menu-button open" : "menu-button"}
@@ -135,8 +121,18 @@ export default function Navbar() {
               <span aria-hidden="true">→</span>
             </Link>
           ))}
-          <Link className="mobile-account-link" href={accountHref}>
-            <span>{accountLabel}</span>
+          <Link
+            className="mobile-account-link session-link session-link-signed-out"
+            href="/login"
+          >
+            <span>Admin Sign In</span>
+            <span aria-hidden="true">→</span>
+          </Link>
+          <Link
+            className="mobile-account-link session-link session-link-signed-in"
+            href="/logout"
+          >
+            <span>Sign Out</span>
             <span aria-hidden="true">→</span>
           </Link>
         </nav>

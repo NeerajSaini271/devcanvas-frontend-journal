@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('devcanvas-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t}catch(e){}})()`,
+            __html: `(function(){try{var r=document.documentElement;var t=localStorage.getItem('devcanvas-theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}r.dataset.theme=t;r.style.colorScheme=t;r.dataset.demoSession=sessionStorage.getItem('devcanvas-demo-session')==='active'?'active':'inactive'}catch(e){}})()`,
           }}
         />
       </head>

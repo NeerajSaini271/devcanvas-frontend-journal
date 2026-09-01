@@ -1587,15 +1587,6 @@ pre,
   }
 }
 
-/* Session-label flash prevention */
-.session-label-pending {
-  visibility: hidden;
-}
-
-.account-button.session-label-pending {
-  pointer-events: none;
-}
-
 /* Strong active navigation state */
 .desktop-nav {
   background: color-mix(in srgb, var(--surface-soft) 72%, transparent);
@@ -1707,8 +1698,19 @@ pre,
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(105deg, rgba(255, 255, 255, 0.16) 0%, transparent 26%, transparent 70%, rgba(8, 14, 38, 0.12) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 38%, rgba(7, 13, 38, 0.08) 100%);
+    linear-gradient(
+      105deg,
+      rgba(255, 255, 255, 0.16) 0%,
+      transparent 26%,
+      transparent 70%,
+      rgba(8, 14, 38, 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      transparent 38%,
+      rgba(7, 13, 38, 0.08) 100%
+    );
 }
 .article-visual::before {
   position: absolute;
@@ -1717,11 +1719,34 @@ pre,
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.13) 0 12%, transparent 12% 100%),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.13) 0 12%,
+      transparent 12% 100%
+    ),
     linear-gradient(315deg, rgba(8, 15, 42, 0.12) 0 15%, transparent 15% 100%),
-    linear-gradient(90deg, transparent 0 8%, rgba(255, 255, 255, 0.055) 8% 18%, transparent 18% 76%, rgba(255, 255, 255, 0.045) 76% 88%, transparent 88% 100%),
-    linear-gradient(0deg, transparent 0 12%, rgba(255, 255, 255, 0.045) 12% 23%, transparent 23% 74%, rgba(8, 14, 38, 0.055) 74% 86%, transparent 86% 100%),
-    repeating-linear-gradient(135deg, transparent 0 38px, rgba(255, 255, 255, 0.03) 38px 40px, transparent 40px 78px);
+    linear-gradient(
+      90deg,
+      transparent 0 8%,
+      rgba(255, 255, 255, 0.055) 8% 18%,
+      transparent 18% 76%,
+      rgba(255, 255, 255, 0.045) 76% 88%,
+      transparent 88% 100%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 0 12%,
+      rgba(255, 255, 255, 0.045) 12% 23%,
+      transparent 23% 74%,
+      rgba(8, 14, 38, 0.055) 74% 86%,
+      transparent 86% 100%
+    ),
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 38px,
+      rgba(255, 255, 255, 0.03) 38px 40px,
+      transparent 40px 78px
+    );
 }
 .article-visual-grid {
   position: absolute;
@@ -1731,12 +1756,33 @@ pre,
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-    linear-gradient(90deg, transparent 0 24%, rgba(255, 255, 255, 0.08) 24% 25%, transparent 25% 74%, rgba(255, 255, 255, 0.06) 74% 75%, transparent 75% 100%),
-    linear-gradient(transparent 0 24%, rgba(255, 255, 255, 0.07) 24% 25%, transparent 25% 74%, rgba(255, 255, 255, 0.05) 74% 75%, transparent 75% 100%);
-  background-size: 28px 28px, 28px 28px, 100% 100%, 100% 100%;
-  mask-image: linear-gradient(110deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.58) 56%, rgba(0, 0, 0, 0.88));
+    linear-gradient(
+      90deg,
+      transparent 0 24%,
+      rgba(255, 255, 255, 0.08) 24% 25%,
+      transparent 25% 74%,
+      rgba(255, 255, 255, 0.06) 74% 75%,
+      transparent 75% 100%
+    ),
+    linear-gradient(
+      transparent 0 24%,
+      rgba(255, 255, 255, 0.07) 24% 25%,
+      transparent 25% 74%,
+      rgba(255, 255, 255, 0.05) 74% 75%,
+      transparent 75% 100%
+    );
+  background-size:
+    28px 28px,
+    28px 28px,
+    100% 100%,
+    100% 100%;
+  mask-image: linear-gradient(
+    110deg,
+    rgba(0, 0, 0, 0.92),
+    rgba(0, 0, 0, 0.58) 56%,
+    rgba(0, 0, 0, 0.88)
+  );
 }
-
 
 .article-topic-pill {
   position: absolute;
@@ -1811,4 +1857,42 @@ pre,
   .featured-card:hover .article-visual-icon {
     transform: scale(0.9);
   }
+}
+
+/* Pre-hydration theme and demo-session stability */
+.theme-toggle {
+  position: relative;
+}
+
+.theme-toggle .theme-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+:root[data-theme="light"] .theme-icon-sun,
+:root[data-theme="dark"] .theme-icon-moon {
+  visibility: hidden;
+}
+
+:root[data-theme="light"] .theme-icon-moon,
+:root[data-theme="dark"] .theme-icon-sun {
+  visibility: visible;
+}
+
+.session-link-signed-in {
+  display: none;
+}
+
+:root[data-demo-session="active"] .session-link-signed-out {
+  display: none;
+}
+
+:root[data-demo-session="active"] .session-link-signed-in {
+  display: inline-flex;
+}
+
+.account-button.desktop-login {
+  min-width: 132px;
 }
