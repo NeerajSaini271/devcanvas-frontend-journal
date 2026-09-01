@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">DevCanvas mark</title>
+  <desc id="desc">The approved DevCanvas DC monogram with an integrated code symbol.</desc>
+  <defs>
+    <linearGradient id="brandGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="0.52" stop-color="#5B5CEB"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="192" height="192" rx="48" fill="url(#brandGradient)"/>
+  <path d="M74 73h46c32 0 58 21 58 47s-26 47-58 47H74V73Zm30 27v40h18c15 0 27-9 27-20s-12-20-27-20h-18Z" fill="#FFFFFF" fill-rule="evenodd" opacity="0.98"/>
+  <path d="M152 86c20 0 37 7 49 20l-21 18c-7-7-16-11-27-11-19 0-34 12-34 28s15 28 34 28c11 0 20-4 27-11l21 18c-12 13-29 20-49 20-36 0-64-24-64-55s28-55 64-55Z" fill="#FFFFFF" opacity="0.33"/>
+  <path d="m83 119-16 14 16 14M157 119l16 14-16 14M129 107l-18 52" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
