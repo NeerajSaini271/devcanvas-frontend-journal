@@ -3,10 +3,26 @@
 </p>
 
 <p align="center">
-  A responsive frontend engineering journal built with Next.js, featuring practical articles, topic-based discovery, custom visual headers, dark mode, and a demo moderation dashboard.
+  A responsive frontend engineering journal built with Next.js, featuring practical articles, topic-based discovery, custom visual headers, light and dark themes, and a demo moderation dashboard.
 </p>
 
-> **Portfolio project:** DevCanvas is an independent educational project created for frontend-development practice and portfolio presentation. Its authentication and moderation features are demonstrations only. The project does not provide real user accounts, persistent authentication, a production API, or database-backed content management.
+<p align="center">
+  <a href="https://devcanvas-frontend-journal.vercel.app">
+    <strong>View Live Demo</strong>
+  </a>
+</p>
+
+> **Portfolio project:** DevCanvas is an independent educational project created for frontend-development practice and portfolio presentation. The authentication and moderation features are demonstrations only. The project does not provide real user accounts, persistent authentication, a production API, or database-backed content management.
+
+## Preview
+
+### Light Mode
+
+[![DevCanvas light-mode homepage preview](public/devcanvas-light-preview.png)](https://devcanvas-frontend-journal.vercel.app)
+
+### Dark Mode
+
+[![DevCanvas dark-mode homepage preview](public/devcanvas-dark-preview.png)](https://devcanvas-frontend-journal.vercel.app)
 
 ## Overview
 
@@ -16,7 +32,7 @@ Each article has a topic-specific visual identity, a responsive detail-page hero
 
 ## Features
 
-### Article discovery
+### Article Discovery
 
 - Featured article section on the homepage
 - Search by article title, excerpt, or author
@@ -24,16 +40,16 @@ Each article has a topic-specific visual identity, a responsive detail-page hero
 - Dynamically calculated article count, topic count, and average reading time
 - Responsive card grid for desktop, tablet, and mobile layouts
 
-### Reading experience
+### Reading Experience
 
 - Statically generated article routes using the Next.js App Router
 - Responsive two-column article hero on desktop
 - Stacked article hero on tablet and mobile screens
 - Topic, author, publication date, and reading-time metadata
-- Topic-specific article content instead of repeated placeholder sections
+- Topic-specific article content
 - Clear navigation back to the article collection
 
-### Visual design
+### Visual Design
 
 - Original DevCanvas logo and standalone brand mark
 - Custom article-header artwork and locally stored SVG assets
@@ -43,7 +59,7 @@ Each article has a topic-specific visual identity, a responsive detail-page hero
 - Responsive typography and spacing
 - Hover transitions with reduced-motion support
 
-### Demo administration
+### Demo Administration
 
 - Demo login interface
 - Session-based route protection
@@ -70,7 +86,7 @@ Each article has a topic-specific visual identity, a responsive detail-page hero
 - Next.js Image component
 - ESLint
 - Git and GitHub
-- Vercel-ready deployment configuration
+- Vercel
 
 ## Main Routes
 
@@ -83,9 +99,9 @@ Each article has a topic-specific visual identity, a responsive detail-page hero
 
 ## Demo-Only Behavior
 
-The login and comment-moderation experiences are included to demonstrate interface design, client-side interaction, and route organization. The current project does not include a production authentication provider, backend API, or database.
+The login and comment-moderation experiences demonstrate interface design, client-side interaction, and route organization. The current project does not include a production authentication provider, backend API, or database.
 
-Any session-related state is temporary and intended only for local or portfolio demonstration.
+Session-related state is temporary and intended only for local or portfolio demonstration.
 
 ## Getting Started
 
@@ -162,6 +178,8 @@ DevCanvas/
 │   └── articles.js
 ├── public/
 │   ├── article-icons/
+│   ├── devcanvas-dark-preview.png
+│   ├── devcanvas-light-preview.png
 │   ├── devcanvas-logo.svg
 │   └── devcanvas-mark.svg
 ├── eslint.config.mjs
@@ -203,7 +221,6 @@ DevCanvas/
 - Empty alternative text for decorative article artwork
 - Keyboard-accessible navigation and filtering controls
 - Reduced-motion support
-- Accessible-form article content covering errors, focus movement, and live feedback
 - Responsive layouts that avoid horizontal page overflow
 
 ## Branding and Visual Assets
@@ -216,16 +233,16 @@ DevCanvas/
 
 ## Deployment
 
-DevCanvas is ready to deploy on Vercel:
+DevCanvas is deployed on Vercel:
 
-1. Import the GitHub repository into Vercel.
-2. Keep the detected framework preset as **Next.js**.
-3. Use the default build command: `npm run build`.
-4. Deploy the project.
+**Production website:** [https://devcanvas-frontend-journal.vercel.app](https://devcanvas-frontend-journal.vercel.app)
 
-No environment variables are required for the current demo implementation.
+The Vercel project is connected to the GitHub repository's `main` branch. Future pushes to `main` automatically trigger new production deployments.
 
-After deployment, add the production URL and a final website preview image to this README.
+- **Framework preset:** Next.js
+- **Build command:** `npm run build`
+- **Root directory:** `./`
+- **Environment variables:** None required
 
 ## Author
 
