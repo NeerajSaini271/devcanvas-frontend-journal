@@ -120,10 +120,6 @@ The project is ready for deployment on Vercel:
 
 No environment variables are required for the current demo implementation.
 
-## Repository
-
-[github.com/NeerajSaini271/devcanvas-frontend-journal](https://github.com/NeerajSaini271/devcanvas-frontend-journal)
-
 ## Author
 
 **Neeraj Kumar Saini**  
